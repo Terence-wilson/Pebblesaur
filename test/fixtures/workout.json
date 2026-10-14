@@ -1,0 +1,61 @@
+{
+  "programId": "abc123",
+  "programName": "GZCLP",
+  "dayName": "A1",
+  "dayData": { "day": 1, "week": 1, "dayInWeek": 1 },
+  "startTime": 1738274512000,
+  "entries": [
+    {
+      "entryId": "squat_barbell",
+      "exerciseId": "squat_barbell",
+      "equipment": "barbell",
+      "name": "Squat",
+      "imageUrl": null,
+      "superset": null,
+      "notes": null,
+      "description": "T1 - work up to a 5RM",
+      "hasUpdateScript": false,
+      "promptedVars": [],
+      "warmupSets": [
+        {
+          "setId": "warmaa", "index": 0, "isWarmup": true, "reps": 5, "minReps": null, "isAmrap": false,
+          "weight": "60kg", "originalWeight": "60kg", "plates": [], "rpe": null, "logRpe": false,
+          "askWeight": false, "isUnilateral": false, "timer": 90, "setTimer": null, "completed": null
+        }
+      ],
+      "sets": [
+        {
+          "setId": "qwertz", "index": 0, "isWarmup": false, "reps": 5, "minReps": null, "isAmrap": false,
+          "weight": "100kg", "originalWeight": "80%", "plates": [], "rpe": null, "logRpe": false,
+          "askWeight": false, "isUnilateral": false, "timer": 180, "setTimer": null,
+          "completed": { "reps": 6, "repsLeft": null, "weight": "102.5kg", "rpe": 8.5, "setTimer": null, "setTimerLeft": null }
+        },
+        {
+          "setId": "asdfgh", "index": 1, "isWarmup": false, "reps": 5, "minReps": 3, "isAmrap": true,
+          "weight": "100kg", "originalWeight": "80%", "plates": [], "rpe": 9, "logRpe": true,
+          "askWeight": false, "isUnilateral": false, "timer": 180, "setTimer": null, "completed": null
+        }
+      ]
+    },
+    {
+      "entryId": "plank",
+      "exerciseId": "plank",
+      "equipment": null,
+      "name": "Side Plank",
+      "imageUrl": null,
+      "superset": null,
+      "notes": null,
+      "description": null,
+      "hasUpdateScript": true,
+      "promptedVars": [{ "name": "target", "value": "30s" }, { "name": "rpe", "value": 8 }],
+      "warmupSets": [],
+      "sets": [
+        {
+          "setId": "zxcvbn", "index": 0, "isWarmup": false, "reps": 1, "minReps": null, "isAmrap": false,
+          "weight": null, "originalWeight": null, "plates": [], "rpe": null, "logRpe": false,
+          "askWeight": false, "isUnilateral": true, "timer": 60, "setTimer": 30, "completed": null
+        }
+      ]
+    }
+  ]
+}

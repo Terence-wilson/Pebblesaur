@@ -1,0 +1,50 @@
+{
+  "name": "pebblesaur",
+  "author": "Terence Wilson",
+  "version": "1.0.0",
+  "description": "Run your Liftosaur workouts from a Pebble watch.",
+  "keywords": ["pebble-app", "liftosaur", "fitness"],
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "pebble": {
+    "displayName": "Pebblesaur",
+    "uuid": "1b3b096c-8b8c-4619-b92f-8710c24afc72",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "basalt",
+      "chalk",
+      "diorite",
+      "emery",
+      "flint"
+    ],
+    "capabilities": [
+      "configurable"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "messageKeys": [
+      "Action",
+      "MsgType",
+      "EntryIndex",
+      "SetIndex",
+      "Reps",
+      "Rpe",
+      "Text",
+      "Started",
+      "Count",
+      "ProgramName",
+      "DayName",
+      "Name",
+      "Info",
+      "Sets"
+    ],
+    "resources": {
+      "media": []
+    }
+  }
+}
