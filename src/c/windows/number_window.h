@@ -7,7 +7,7 @@ typedef enum {
   NUMBER_FORMAT_TENTHS, // value is x10, shown as "8.5"
 } NumberFormat;
 
-typedef void (*NumberWindowCallback)(int value, void *context);
+typedef void (*PickerCallback)(int value, void *context);
 
 typedef struct {
   const char *title;
@@ -17,9 +17,9 @@ typedef struct {
   int max;
   int step;
   NumberFormat format;
-  NumberWindowCallback on_select;
+  PickerCallback on_select;
   void *context;
-} NumberWindowConfig;
+} PickerConfig;
 
 // Up/Down change the value, Select confirms, Back cancels.
-void number_window_push(const NumberWindowConfig *config);
+void number_window_push(const PickerConfig *config);

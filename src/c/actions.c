@@ -73,7 +73,7 @@ static void prv_ask_rpe(void) {
   if (set->rpe10 >= 0) {
     snprintf(subtitle, sizeof(subtitle), "Target %d.%d", set->rpe10 / 10, set->rpe10 % 10);
   }
-  NumberWindowConfig config = {
+  PickerConfig config = {
     .title = "RPE",
     .subtitle = subtitle,
     .value = initial,
@@ -108,7 +108,7 @@ static void prv_ask_reps(void) {
     size_t len = strlen(subtitle);
     snprintf(subtitle + len, sizeof(subtitle) - len, " @ %s", set->weight);
   }
-  NumberWindowConfig config = {
+  PickerConfig config = {
     .title = "Reps",
     .subtitle = subtitle,
     .value = s_pending.reps,

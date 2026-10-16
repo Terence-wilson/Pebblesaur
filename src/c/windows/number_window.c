@@ -9,13 +9,13 @@
 typedef struct {
   Window *window;
   Layer *canvas;
-  NumberWindowConfig config;
+  PickerConfig config;
   char title[NUMBER_TITLE_LEN];
   char subtitle[NUMBER_SUBTITLE_LEN];
-} NumberWindow;
+} PickerWindow;
 
 static void prv_draw(Layer *layer, GContext *ctx) {
-  NumberWindow *nw = *(NumberWindow **)layer_get_data(layer);
+  PickerWindow *nw = *(PickerWindow **)layer_get_data(layer);
   GRect bounds = layer_get_bounds(layer);
   int w = bounds.size.w;
   int h = bounds.size.h;
@@ -51,7 +51,7 @@ static void prv_draw(Layer *layer, GContext *ctx) {
                      GTextOverflowModeFill, GTextAlignmentCenter, NULL);
 }
 
-static void prv_change(NumberWindow *nw, int direction) {
+static void prv_change(PickerWindow *nw, int direction) {
   int value = nw->config.value + direction * nw->config.step;
   if (value > nw->config.max) {
     value = nw->config.max;
@@ -72,9 +72,9 @@ static void prv_down(ClickRecognizerRef recognizer, void *context) {
 }
 
 static void prv_select(ClickRecognizerRef recognizer, void *context) {
-  NumberWindow *nw = context;
+  PickerWindow *nw = context;
   // Copy out first: removing the window may free nw.
-  NumberWindowCallback callback = nw->config.on_select;
+  PickerCallback callback = nw->config.on_select;
   int value = nw->config.value;
   void *cb_context = nw->config.context;
   // Pop first so the callback can push the next window.
@@ -91,23 +91,23 @@ static void prv_click_config(void *context) {
 }
 
 static void prv_load(Window *window) {
-  NumberWindow *nw = window_get_user_data(window);
+  PickerWindow *nw = window_get_user_data(window);
   Layer *root = window_get_root_layer(window);
-  nw->canvas = layer_create_with_data(layer_get_bounds(root), sizeof(NumberWindow *));
-  *(NumberWindow **)layer_get_data(nw->canvas) = nw;
+  nw->canvas = layer_create_with_data(layer_get_bounds(root), sizeof(PickerWindow *));
+  *(PickerWindow **)layer_get_data(nw->canvas) = nw;
   layer_set_update_proc(nw->canvas, prv_draw);
   layer_add_child(root, nw->canvas);
 }
 
 static void prv_unload(Window *window) {
-  NumberWindow *nw = window_get_user_data(window);
+  PickerWindow *nw = window_get_user_data(window);
   layer_destroy(nw->canvas);
   free(nw);
   window_destroy(window);
 }
 
-void number_window_push(const NumberWindowConfig *config) {
-  NumberWindow *nw = malloc(sizeof(NumberWindow));
+void number_window_push(const PickerConfig *config) {
+  PickerWindow *nw = malloc(sizeof(PickerWindow));
   if (!nw) {
     return;
   }
