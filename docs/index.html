@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pebblesaur</title>
+<meta name="description" content="Run your Liftosaur workouts from a Pebble watch.">
+<style>
+  :root { --bg:#fff; --fg:#1d2330; --muted:#5b6475; --accent:#e4572e; --card:#f4f5f8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14171f; --fg:#e8eaf0; --muted:#9aa3b5; --card:#1e2230; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 16px; }
+  h1 { font-size: 2.6rem; margin: 0 0 .25em; }
+  h2 { margin-top: 2em; }
+  p.lead { font-size: 1.25rem; color: var(--muted); }
+  a { color: var(--accent); }
+  .btn { display:inline-block; padding:.6em 1.2em; border-radius:8px; background:var(--accent);
+         color:#fff; text-decoration:none; font-weight:600; margin:0 .5em .5em 0; }
+  .btn.alt { background:var(--card); color:var(--fg); }
+  ul { padding-left: 1.2em; }
+  .card { background:var(--card); border-radius:12px; padding:1em 1.4em; }
+  footer { margin-top:3em; color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pebblesaur</h1>
+  <p class="lead">Run your <a href="https://www.liftosaur.com">Liftosaur</a> workouts from your Pebble watch.</p>
+  <p>
+    <a class="btn" href="https://github.com/Terence-wilson/Pebblesaur">View on GitHub</a>
+    <a class="btn alt" href="https://github.com/Terence-wilson/Pebblesaur#building">Build &amp; install</a>
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>See your next (or in-progress) workout and switch between exercises</li>
+    <li>Mark sets complete with one click, and undo them</li>
+    <li>Update reps for any set; AMRAP sets ask automatically</li>
+    <li>Log RPE for sets that track it</li>
+    <li>Rest timer using your program's rest times, with a vibration when it ends</li>
+    <li>Finish the workout: it's saved to Liftosaur and progressions run</li>
+  </ul>
+
+  <h2>Setup</h2>
+  <ol>
+    <li>In Liftosaur, go to <strong>Settings → API Keys → Create API Key</strong> (requires Liftosaur premium).</li>
+    <li>Build and install Pebblesaur on your watch.</li>
+    <li>In the Pebble phone app, open Pebblesaur's settings and paste the key.</li>
+  </ol>
+
+  <h2>Supported watches</h2>
+  <p>Pebble Time, Time Round, Pebble 2, Time 2 and Pebble 2 Duo. The original Pebble (aplite) isn't supported.</p>
+
+  <h2>Support the project</h2>
+  <div class="card">
+    <p>Pebblesaur is free and open source. If it's useful to you, you can chip in:</p>
+    <a class="btn" href="https://buymeacoffee.com/quillsh">&#9749; Buy me a coffee</a>
+  </div>
+
+  <footer>Not affiliated with Liftosaur.</footer>
+</main>
+</body>
+</html>
