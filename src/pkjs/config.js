@@ -15,6 +15,8 @@ function configPage(hasKey, returnTo) {
     'button{width:100%;font-size:17px;padding:14px;border:0;border-radius:8px;margin-top:16px;font-weight:600}' +
     '#save{background:#5b3fd1;color:#fff}#clear{background:transparent;color:#a3302b}' +
     '.status{font-size:13px;color:#2d7a3e;margin-top:6px}' +
+    '.support{margin-top:32px;padding-top:16px;border-top:1px solid #d8d3ea;text-align:center}' +
+    '.support a{color:#5b3fd1;font-weight:600;text-decoration:none}' +
     '</style></head><body>' +
     '<h1>Pebblesaur</h1>' +
     '<p>Run your Liftosaur workouts from your watch. Create an API key in Liftosaur under ' +
@@ -25,6 +27,8 @@ function configPage(hasKey, returnTo) {
     (hasKey ? '<div class="status">An API key is saved.</div>' : '') +
     '<button id="save">Save</button>' +
     (hasKey ? '<button id="clear">Remove saved key</button>' : '') +
+    '<div class="support"><p>Enjoying Pebblesaur? It is free and open source.</p>' +
+    '<a href="https://buymeacoffee.com/quillsh" target="_blank">&#9749; Buy me a coffee</a></div>' +
     '<script>' +
     'var returnTo=' + JSON.stringify(returnTo) + ';' +
     'function done(settings){document.location=returnTo+encodeURIComponent(JSON.stringify(settings));}' +
